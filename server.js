@@ -7,10 +7,11 @@ app.use(express.static('./public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false }));
 
+const client = require('./routes/client');
 
-const form = require('./routes/main');
+console.log('>>> About to start', client);
 
-app.use('/main', form);
+app.use('/client', client);
 
 const port = process.env.PORT || 3000;
 
